@@ -107,12 +107,22 @@
     </div>
   </div>
 
-  <div id="qrcode"></div>
-  <p class="scan-hint">📱 扫码体验 · 微信/浏览器均可打开</p>
+  <div style="display:flex;gap:20px;justify-content:center;margin-bottom:8px;flex-wrap:wrap">
+    <div>
+      <div id="qrcode-light" style="display:inline-block;padding:6px;border:1px solid #eee;border-radius:10px"></div>
+      <p style="font-size:12px;color:var(--muted);margin-top:6px">⚡ 轻量版（秒开）</p>
+    </div>
+    <div>
+      <div id="qrcode-full" style="display:inline-block;padding:6px;border:1px solid #eee;border-radius:10px"></div>
+      <p style="font-size:12px;color:var(--muted);margin-top:6px">🏦 全量版（Dify官方）</p>
+    </div>
+  </div>
+  <p class="scan-hint">📱 轻量版加载更快，全量版功能更全</p>
 
-  <a class="btn" href="https://iijdd.github.io/xiaozhao/chat.html" target="_blank">
-    直接打开聊天
-  </a>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+    <a class="btn" href="https://iijdd.github.io/xiaozhao/chat.html" target="_blank">⚡ 轻量版</a>
+    <a class="btn" href="https://udify.app/chatbot/uWxkxB4KjBNuuSto" target="_blank">🏦 全量版</a>
+  </div>
   <p class="footer">
     招商银行数字金融训练营 · AI产品赛道<br>
     赵梓维（中山大学）
@@ -120,10 +130,18 @@
 </div>
 
 <script>
-new QRCode(document.getElementById("qrcode"), {
+new QRCode(document.getElementById("qrcode-light"), {
   text: "https://iijdd.github.io/xiaozhao/chat.html",
-  width: 160,
-  height: 160,
+  width: 140,
+  height: 140,
+  colorDark: "#ce0e2d",
+  colorLight: "#ffffff",
+  correctLevel: QRCode.CorrectLevel.M
+});
+new QRCode(document.getElementById("qrcode-full"), {
+  text: "https://udify.app/chatbot/uWxkxB4KjBNuuSto",
+  width: 140,
+  height: 140,
   colorDark: "#ce0e2d",
   colorLight: "#ffffff",
   correctLevel: QRCode.CorrectLevel.M
